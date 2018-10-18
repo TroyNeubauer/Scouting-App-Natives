@@ -6,6 +6,7 @@
 //#include <jni.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 using namespace std;
 
@@ -23,7 +24,7 @@ JNIEXPORT jboolean JNICALL Java_com_jt_scoutserver_utils_SystemUtils_hasNewDevic
 */
 
 
-bool is_prime(int n) {
+bool is_prime(uint64_t n) {
 	if (n <= 1)
 		return false;
 	else if (n <= 3)
@@ -31,9 +32,9 @@ bool is_prime(int n) {
 	else if (n % 2 == 0 || n % 3 == 0) {
 		return false;
 	}
-	int i = 5;
+	uint64_t i = 5;
 	while (i * i <= n) {
-		if (n % i == 0 or n % (i + 2) == 0) {
+		if (n % i == 0 || n % (i + 2) == 0) {
 			return false;
 		}
 		i += 6;
@@ -43,7 +44,7 @@ bool is_prime(int n) {
 
 
 int main(void) {
-	for (int i = 0; i < 90000000; i++) {
+	for (uint64_t i = 0; i < 900000000; i++) {
 		if (is_prime(i)) printf("%i, ", i);
 	}
 	
