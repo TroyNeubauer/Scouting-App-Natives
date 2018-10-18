@@ -1,20 +1,54 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <time.h>
 #include <windows.h>
 #include <string>
 
+//#include <jni.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 using namespace std;
 
-string allDrives;
+string allDrives;/*
 
 char getRemovableDisk();
+JNIEXPORT jboolean JNICALL Java_com_jt_scoutserver_utils_SystemUtils_hasNewDevices
+(JNIEnv * env, jclass class, jlong fd) {
+	driveLetter = getRemovableDisk();
+	if (driveLetter != '0') {
+	}
+	return true;
+}
 
-driveLetter = getRemovableDisk();
-if (driveLetter != '0') {
+*/
+
+
+bool is_prime(int n) {
+	if (n <= 1)
+		return false;
+	else if (n <= 3)
+		return true;
+	else if (n % 2 == 0 || n % 3 == 0) {
+		return false;
+	}
+	int i = 5;
+	while (i * i <= n) {
+		if (n % i == 0 or n % (i + 2) == 0) {
+			return false;
+		}
+		i += 6;
+	}
+	return true;
+}
 
 
 int main(void) {
-
+	for (int i = 0; i < 90000000; i++) {
+		if (is_prime(i)) printf("%i, ", i);
+	}
+	
+	
+	return 0;/*
 	char driveLetter;
 	while (1) {
 		driveLetter = getRemovableDisk();
@@ -25,7 +59,7 @@ int main(void) {
 		Sleep(100);
 	}
 
-	return 0;
+	return 0;*/
 }
 
 char getRemovableDisk() {
