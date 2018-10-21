@@ -71,24 +71,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;C:\C++\Current Projects\Scouting App Natives\lib\include\libusb-1.0;$(IncludePath)</IncludePath>
     <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>C:\C++\Current Projects\Scouting App Natives\lib\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;C:\C++\Current Projects\Scouting App Natives\lib\include\libusb-1.0;$(IncludePath)</IncludePath>
     <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>C:\C++\Current Projects\Scouting App Natives\lib\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;C:\C++\Current Projects\Scouting App Natives\lib\include\libusb-1.0;$(IncludePath)</IncludePath>
     <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>C:\C++\Current Projects\Scouting App Natives\lib\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Java\jdk1.8.0_181\include;C:\Program Files\Java\jdk1.8.0_181\include\win32;C:\C++\Current Projects\Scouting App Natives\lib\include\libusb-1.0;$(IncludePath)</IncludePath>
     <OutDir>$(ProjectDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>C:\C++\Current Projects\Scouting App Natives\lib\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -97,6 +101,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>libusb-1.0.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -105,6 +112,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>libusb-1.0.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -118,6 +128,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libusb-1.0.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,10 +143,11 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libusb-1.0.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.c" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
