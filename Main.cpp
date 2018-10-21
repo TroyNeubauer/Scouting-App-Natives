@@ -31,7 +31,6 @@ JNIEXPORT jboolean JNICALL Java_com_jt_scoutserver_utils_SystemUtils_hasNewDevic
 }
 
 JNIEXPORT int JNICALL Java_com_jt_scoutserver_utils_SystemUtils_nativeInit(JNIEnv * env, jclass c) {
-	ssize_t cnt; //holding number of devices in list
 	int r = libusb_init(&ctx); //initialize a library session
 	if (r < 0) {
 		cout << "Error creating libUSB " << r << endl; //there was an error
